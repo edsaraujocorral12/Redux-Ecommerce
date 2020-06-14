@@ -19,7 +19,7 @@ export const ProductList = styled.ul`
       max-width: 250px;
 
     }
-
+    
     > strong {
       font-size: 16px;
       line-height: 20px;
