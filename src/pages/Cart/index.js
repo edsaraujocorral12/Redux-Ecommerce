@@ -91,7 +91,12 @@ function Cart({ cart, dispatch, total }) {
   );
 }
 
-const mapsStateToProps = state => ({
+/**
+ * Sempre que precisarmos realizar um cálculo baseado em 
+ * alguma informação que está dentro no Reducer, o melhor lugar 
+ * é aqui!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ */
+const mapStateToProps = state => ({
   cart: state.cart.map(product => ({
     ...product,
     subTotal: formatPrice(product.price * product.amount)
@@ -101,4 +106,4 @@ const mapsStateToProps = state => ({
   }, 0))
 });
 
-export default connect(mapsStateToProps)(Cart);
+export default connect(mapStateToProps)(Cart);
